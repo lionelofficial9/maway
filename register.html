@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cultural Day — Student Registration</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <nav class="topbar">
+    <div class="brand-mini">🌍 World Mission · Cultural Day</div>
+    <div>
+      <span id="who" class="who"></span>
+      <button id="logoutBtn" class="btn-ghost">Logout</button>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Cultural Day Registration</h1>
+      <p>Celebrate the world's cultures with us. Fill in your details and add the people coming with you.</p>
+    </section>
+
+    <form id="regForm" class="panel">
+      <h2>Your details</h2>
+      <div class="grid">
+        <label>Full Name
+          <input type="text" id="fullName" required placeholder="Enter full name" />
+        </label>
+        <label>Email
+          <input type="email" id="email" required placeholder="you@school.com" />
+        </label>
+        <label>Phone
+          <input type="tel" id="phone" required placeholder="+254 ..." />
+        </label>
+        <label>Class / Grade
+          <input type="text" id="grade" required placeholder="e.g. Form 3 / Grade 11" />
+        </label>
+        <label>Country / Culture Representing
+          <input type="text" id="country" required placeholder="e.g. Kenya, Japan, Nigeria" />
+        </label>
+        <label>Costume / Performance
+          <input type="text" id="performance" placeholder="e.g. Traditional dance" />
+        </label>
+      </div>
+
+      <h2>People coming with you</h2>
+      <div class="guest-row">
+        <input type="text" id="guestName" placeholder="Guest full name" />
+        <select id="guestRelation">
+          <option value="Parent">Parent</option>
+          <option value="Sibling">Sibling</option>
+          <option value="Friend">Friend</option>
+          <option value="Guardian">Guardian</option>
+          <option value="Other">Other</option>
+        </select>
+        <button type="button" id="addGuestBtn" class="btn-secondary">+ Add Person</button>
+      </div>
+      <ul id="guestList" class="guests"></ul>
+
+      <button type="submit" class="btn-primary big">Send Invitation</button>
+    </form>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal hidden">
+      <div class="modal-card">
+        <div class="check">✓</div>
+        <h2>Invitation Successful!</h2>
+        <p id="successText">You have successfully registered for the Cultural Day.</p>
+        <button id="closeModal" class="btn-primary">Awesome!</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>
